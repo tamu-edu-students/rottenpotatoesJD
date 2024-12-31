@@ -5,12 +5,23 @@
 <h1>Movies</h1>
 
 <div id="movies">
+  <table>
+    <tr>
+      <th> Title </th>
+      <th> Rating </th>
+      <th> Release Date </th>
+    </tr>
   <% @movies.each do |movie| %>
     <%= render movie %>
-    <p>
-      <%= link_to "Show this movie", movie %>
-    </p>
+    <tr>
+      <td> <%= link_to movie.title, movie %> </td>
+      <td> movie.rating </td>
+      <td> movie.release_date </td>
+
+    </tr>
   <% end %>
+
+  </table>
 </div>
 
 <%= link_to "New movie", new_movie_path %>
