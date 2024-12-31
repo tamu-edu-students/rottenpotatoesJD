@@ -1,27 +1,38 @@
-<p style="color: green"><%= notice %></p>
-
-<% content_for :title, "Movies" %>
-
 <h1>Movies</h1>
 
-<div id="movies">
-  <table>
+<%= link_to "No Sorting", movies_path, class: "btn btn-primary" %>
+<%= link_to "Sort by Title (A-Z)", movies_path(sort: "title"), class: "btn btn-secondary" %>
+<%= link_to "Sort by Title (Z-A)", movies_path(sort: "reverse_title"), class: "btn btn-secondary" %>
+<%= link_to "Sort by Rating (A-Z)", movies_path(sort: "rating"), class: "btn btn-secondary" %>
+<%= link_to "Sort by Rating (Z-A)", movies_path(sort: "reverse_rating"), class: "btn btn-secondary" %>
+<%= link_to "Sort by Date (Oldest First)", movies_path(sort: "date"), class: "btn btn-secondary" %>
+<%= link_to "Sort by Date (Newest First)", movies_path(sort: "reverse_date"), class: "btn btn-secondary" %>
+
+
+<table class="movies-table">
+  <thead>
     <tr>
-      <th> Title </th>
-      <th> Rating </th>
-      <th> Release Date </th>
+      <th class="<%= 'sorted' if params[:sort] == 'title' || params[:sort] == 'reverse_title' %>">Title</th>
+      <th class="<%= 'sorted' if params[:sort] == 'rating' || params[:sort] == 'reverse_rating' %>">Rating</th>
+      <th class="<%= 'sorted' if params[:sort] == 'date' || params[:sort] == 'reverse_date' %>">Release Date</th>
     </tr>
-  <% @movies.each do |movie| %>
-    <%= render movie %>
-    <tr>
-      <td> <%= link_to movie.title, movie %> </td>
-      <td> movie.rating </td>
-      <td> movie.release_date </td>
+  </thead>
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td class="<%= 'sorted-column' if params[:sort] == 'title' || params[:sort] == 'reverse_title' %>">
+          <%= link_to movie.title, movie_path(movie, request.query_parameters) %>
+        </td>
+        <td class="<%= 'sorted-column' if params[:sort] == 'rating' || params[:sort] == 'reverse_rating' %>">
+          <%= movie.rating %>
+        </td>
+        <td class="<%= 'sorted-column' if params[:sort] == 'date' || params[:sort] == 'reverse_date' %>">
+          <%= movie.release_date %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-    </tr>
-  <% end %>
 
-  </table>
-</div>
-
-<%= link_to "New movie", new_movie_path %>
+<%= link_to "New movie", new_movie_path(request.query_parameters), class: "new-movie-btn" %>

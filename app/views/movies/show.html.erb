@@ -1,10 +1,13 @@
-<p style="color: green"><%= notice %></p>
+<p class="notice"><%= notice %></p>
 
-<%= render @movie %>
+<div class="movie-details">
+  <%= render @movie %>
+</div>
 
-<div>
-  <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
-  <%= link_to "Back to movies", movies_path %>
+<div class="movie-actions">
+  <%= link_to "Edit this movie", edit_movie_path(@movie, request.query_parameters), class: "btn btn-primary" %> |
+  
+  <%= link_to "Back to movies", movies_path(request.query_parameters), class: "btn btn-secondary" %>
 
-  <%= button_to "Destroy this movie", @movie, method: :delete %>
+  <%= button_to "Destroy this movie", @movie, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
 </div>

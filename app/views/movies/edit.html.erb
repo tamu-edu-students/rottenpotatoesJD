@@ -1,12 +1,14 @@
 <% content_for :title, "Editing movie" %>
 
-<h1>Editing movie</h1>
+<h1 class="page-title">Editing movie</h1>
 
 <%= render "form", movie: @movie %>
 
 <br>
 
-<div>
-  <%= link_to "Show this movie", @movie %> |
-  <%= link_to "Back to movies", movies_path %>
+<div class="movie-actions">
+  <!-- Show this movie link with preserved query parameters -->
+  <%= link_to "Show this movie", movie_path(@movie, request.query_parameters), class: "btn btn-primary" %> |
+  <!-- Back to movies link with preserved query parameters -->
+  <%= link_to "Back to movies", movies_path(request.query_parameters), class: "btn btn-secondary" %>
 </div>

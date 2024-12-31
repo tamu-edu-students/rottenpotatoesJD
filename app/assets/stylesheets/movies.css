@@ -1,0 +1,210 @@
+/* Button styles with extra bottom margin */
+.btn {
+    margin-right: 10px;
+    margin-bottom: 20px;  /* Adjust this value to your liking */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none; 
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    opacity: 0.8;
+}
+
+/* Table Styles */
+.movies-table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 30px; /* Add top margin for extra spacing from the buttons */
+}
+
+.movies-table th,
+.movies-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.movies-table th {
+    background-color: #f4f4f4;
+    cursor: pointer;
+}
+
+.movies-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Highlight the column based on sorting */
+.movies-table th.sorted {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Highlight the entire column based on sorting */
+.movies-table td.sorted-column {
+    background-color: #fff9c4;  /* Light yellow background */
+}
+
+.movies-table td {
+    vertical-align: middle;
+}
+
+/* Notice message styles */
+.notice {
+    color: green;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Movie details section */
+.movie-details {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-bottom: 30px;
+}
+
+/* Movie edit and delete buttons */
+.movie-actions {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Destroy button style - Red button */
+.movie-actions form button {
+    background-color: #dc3545;  /* Red background for the delete button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    outline: none; /* Remove outline */
+    box-shadow: none; /* Remove any box-shadow */
+}
+
+/* Destroy button hover state */
+.movie-actions form button:hover {
+    background-color: #c82333; /* Darker red on hover */
+    transform: scale(1.05);
+}
+
+/* Remove focus outline and box shadow */
+.movie-actions form button:focus,
+.movie-actions form button:focus-visible {
+    outline: none; /* Remove focus outline */
+    box-shadow: none; /* Remove box shadow */
+}
+
+/* Remove focus outline and box-shadow for active and focused states */
+.movie-actions form button:focus:not(:focus-visible),
+.movie-actions form button:active {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Make sure no outline or box-shadow is shown on all focusable button states */
+.movie-actions form button:focus, 
+.movie-actions form button:active, 
+.movie-actions form button:focus-visible {
+    outline: none; 
+    box-shadow: none; 
+}
+
+/* Page Title */
+.page-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Form styling */
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+form label {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Movie action links: Show this movie & Back to movies */
+.movie-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.movie-actions a {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.movie-actions a:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Button for editing */
+.movie-actions .btn-primary {
+    background-color: #28a745;
+}
+
+.movie-actions .btn-primary:hover {
+    background-color: #218838;
+}
+
+/* Button for secondary links (Back to movies) */
+.movie-actions .btn-secondary {
+    background-color: #6c757d;
+}
+
+.movie-actions .btn-secondary:hover {
+    background-color: #5a6268;
+}
